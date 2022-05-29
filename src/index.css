@@ -43,9 +43,28 @@ h1 {
   z-index: -1
 }
 
+.search {
+  text-align: center;
+  padding: 1rem;
+}
+
+.search input {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.3rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8f8f8;
+  box-shadow: 3px 3px 3px 3px rgb(0, 0, 0);
+}
+
+::placeholder {
+  color: #f8f8f8
+}
+
 .container {
-  max-width: 700px;
-  height: 700px;
+  max-width: 1000px;
+  height: 600px;
   margin: auto;
   padding: 0 1rem;
   position: relative;
@@ -61,10 +80,14 @@ h1 {
   margin: 1rem, auto;
 }
 
+.location p {
+  font-size: 1.5rem;
+}
+
 .description {
   width: 250px;
   position: relative;
-  right: -90%;
+  right: -80%;
   transform-origin: 0, 0;
   transform: rotate(270deg);
 }
@@ -86,4 +109,14 @@ h1 {
 
 .bold {
   font-weight: 800;
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    height: 500px;
+  }
+
+  .description {
+    right: -60%
+  }
 }

@@ -35,19 +35,19 @@ function App() {
         {data.name != undefined &&
 
           <div className="top">
-            <div className="location">
+            <div className="location scale-up-center">
               <p>{data.name}, {data.sys.country}</p>
             </div>
-            <div className="temp">
+            <div className="temp scale-up-center">
               {data.main ? <h1>{Math.round(data.main.temp)}°C</h1> : null}
             </div>
-            <div className="description">
+            <div className="description rotate-270-cw">
               <p>{data.weather ? data.weather[0].description : null}</p>
             </div>
           </div>
         }
         {data.name != undefined &&
-          <div className="bottom">
+          <div className="bottom scale-up-center">
             <div className="feels">
               <p className="bold">{data.main ? Math.round(data.main.feels_like) : null}°C</p>
               <p>Feels Like</p>

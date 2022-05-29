@@ -3,6 +3,8 @@ import axios from 'axios';
 
 function App() {
 
+  const year = new Date().getFullYear()
+
   const [data, setData] = useState({})
   const [location, setLocation] = useState('')
 
@@ -26,9 +28,13 @@ function App() {
         <input
           value={location}
           onChange={event => setLocation(event.target.value)}
-          placeholder="Enter Location"
+          placeholder="Enter City Name"
           onKeyPress={searchLocation}
           type="text" />
+        <select name="Unit" placeholder="Unit System">
+          <option value="Imperial">Imperial</option>
+          <option value="Metric">Metric</option>
+        </select>
       </div>
 
       <div className="container">
@@ -63,6 +69,7 @@ function App() {
           </div>
         }
       </div>
+      <p className="copyright">copyrightⒸ {year} Yaniv Weinshtein </p>
     </div>
   );
 }

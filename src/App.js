@@ -5,6 +5,14 @@ function App() {
 
   const year = new Date().getFullYear()
 
+  const event = new Date();
+
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  const day = days[event.getDay()]
+  const month = months[event.getMonth()]
+  const monthDay = event.getUTCDate()
+
   const [data, setData] = useState({})
   const [location, setLocation] = useState('')
   const [unit, setUnit] = useState('metric')
@@ -35,7 +43,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className="search">
+      <div className="search scale-up-center">
         <input
           value={location}
           onChange={event => setLocation(event.target.value)}
@@ -46,11 +54,10 @@ function App() {
           <option value="metric">Celsius</option>
           <option value="imperial">Fahrenheit</option>
         </select>
+        <h2>{day}, {month} {monthDay} {year}</h2>
       </div>
-
       <div className="container">
         {data.name !== undefined &&
-
           <div className="top">
             <div className="location scale-up-center">
               <p>{data.name}, {data.sys.country}</p>
@@ -58,7 +65,7 @@ function App() {
             <div className="temp scale-up-center">
               {data.main ? <h1>{Math.round(data.main.temp)}°{degrees}</h1> : null}
             </div>
-            <div className="description rotate-270-cw">
+            <div className="description rotate-90-right-ccw">
               <p>{data.weather ? data.weather[0].description : null}</p>
             </div>
           </div>

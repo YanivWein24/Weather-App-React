@@ -69,6 +69,12 @@ h1 {
   box-shadow: 3px 3px 3px 3px rgb(0, 0, 0);
 }
 
+.search h2 {
+  padding: 1rem 0 0;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 ::placeholder {
   color: #f8f8f8
 }
@@ -79,7 +85,7 @@ h1 {
   margin: auto;
   padding: 0 1rem;
   position: relative;
-  top: 7%;
+  top: 3%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -98,8 +104,8 @@ h1 {
 .description {
   width: 250px;
   position: relative;
-  right: -80%;
-  top: 50%;
+  right: -70%;
+  top: 0%;
   transform-origin: 0, 0;
   transform: rotate(270deg);
 }
@@ -108,20 +114,24 @@ h1 {
   font-size: 1.8rem;
 }
 
-.rotate-270-cw {
-  -webkit-animation: rotate-270-cw 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  animation: rotate-270-cw 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+.rotate-90-right-ccw {
+  -webkit-animation: rotate-90-right-ccw 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: rotate-90-right-ccw 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-@keyframes rotate-270-cw {
+@keyframes rotate-90-right-ccw {
   0% {
     -webkit-transform: rotate(0);
     transform: rotate(0);
+    -webkit-transform-origin: right;
+    transform-origin: right;
   }
 
   100% {
-    -webkit-transform: rotate(270deg);
-    transform: rotate(270deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-transform-origin: right;
+    transform-origin: right;
   }
 }
 
@@ -151,8 +161,8 @@ h1 {
 
 /* From Animista */
 .scale-up-center {
-  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: scale-up-center 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: scale-up-center 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 @keyframes scale-up-center {
@@ -170,7 +180,11 @@ h1 {
 /* From Animista */
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
+
+  /* .app {
+    height: 105vh;
+  } */
 
   .container {
     height: 450px;
@@ -181,8 +195,9 @@ h1 {
   }
 
   .description {
-    right: -60%;
-    top: 20%;
+    right: -20%;
+    top: -25%;
+    text-align: center;
   }
 
   .description p {

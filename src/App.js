@@ -21,7 +21,8 @@ function App() {
 
   const degrees = (unit === 'metric') ? "C" : "F"
   const speedUnit = (unit === 'metric') ? "KM/H" : "MPH"
-  const speed = (unit === 'metric') ? ((data.wind.speed) * 3.6) : data.wind.speed
+  const speed = data.main ? ((unit === 'metric') ? data.wind.speed * 3.6 : data.wind.speed) : null
+  // before we check for the unit system, we first need to check if theres data available. Otherwise the app wont load.
 
   const API = `${process.env.REACT_APP_API_KEY}`
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${API}`

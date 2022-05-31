@@ -3,7 +3,6 @@ import axios from 'axios';
 
 function App() {
 
-
   const event = new Date();
 
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
@@ -17,9 +16,12 @@ function App() {
   const [location, setLocation] = useState('')
   const [unit, setUnit] = useState('metric')
 
+  const icon = data.main ? data.weather[0].icon : null
+  const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
 
   const degrees = (unit === 'metric') ? "C" : "F"
-  const speed = (unit === 'metric') ? "KM/H" : "MPH"
+  const speedUnit = (unit === 'metric') ? "KM/H" : "MPH"
+  const speed = (unit === 'metric') ? ((data.wind.speed) * 3.6) : data.wind.speed
 
   const API = `${process.env.REACT_APP_API_KEY}`
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${unit}&appid=${API}`
@@ -41,9 +43,6 @@ function App() {
       setData(response.data)
     })
   }
-
-  const icon = data.main ? data.weather[0].icon : null
-  const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
 
   return (
     <div className="app">
@@ -88,7 +87,7 @@ function App() {
               <p>Humidity</p>
             </div>
             <div className="wind">
-              <p className="bold">{data.wind ? data.wind.speed : null} {speed}</p>
+              <p className="bold">{data.wind ? speed : null} {speedUnit}</p>
               <p>Winds</p>
             </div>
           </div>

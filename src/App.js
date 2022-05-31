@@ -88,7 +88,7 @@ function App() {
               <p>Humidity</p>
             </div>
             <div className="wind">
-              <p className="bold">{data.wind ? speed : null} {speedUnit}</p>
+              <p className="bold">{data.wind ? Math.round(speed) : null} {speedUnit}</p>
               <p>Winds</p>
             </div>
           </div>

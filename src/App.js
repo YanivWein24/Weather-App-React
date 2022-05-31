@@ -3,7 +3,6 @@ import axios from 'axios';
 
 function App() {
 
-  const year = new Date().getFullYear()
 
   const event = new Date();
 
@@ -12,10 +11,12 @@ function App() {
   const day = days[event.getDay()]
   const month = months[event.getMonth()]
   const monthDay = event.getUTCDate()
+  const year = event.getFullYear()
 
   const [data, setData] = useState({})
   const [location, setLocation] = useState('')
   const [unit, setUnit] = useState('metric')
+
 
   const degrees = (unit === 'metric') ? "C" : "F"
   const speed = (unit === 'metric') ? "KM/H" : "MPH"
@@ -40,6 +41,9 @@ function App() {
       setData(response.data)
     })
   }
+
+  const icon = data.main ? data.weather[0].icon : null
+  const imageURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png"
 
   return (
     <div className="app">
@@ -67,6 +71,9 @@ function App() {
             </div>
             <div className="description rotate-90-right-ccw">
               <p>{data.weather ? data.weather[0].description : null}</p>
+            </div>
+            <div className="icon scale-up-center">
+              <p >{data.weather ? <img src={imageURL} alt="Icon" /> : null}</p>
             </div>
           </div>
         }

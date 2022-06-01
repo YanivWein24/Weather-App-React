@@ -1,7 +1,7 @@
 ## Features:  
 * Get the current weather information for any location in the world!
 * Support for both the Metric and Imperial systems!
-* Recieve updated weather conditions, including:
+* Receive updated weather conditions, including:
   * Weather Description 
   * Temperature
   * "Feels Like" Temperature

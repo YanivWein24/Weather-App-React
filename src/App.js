@@ -22,6 +22,8 @@ function App() {
   const degrees = (unit === 'metric') ? "C" : "F"
   const speedUnit = (unit === 'metric') ? "KM/H" : "MPH"
   const speed = data.main ? ((unit === 'metric') ? data.wind.speed * 3.6 : data.wind.speed) : null
+  // the default unit for wind speed is M/Sec (on the metric system), so we multiply it by 3.6 to convert it to KM/H
+  // on the imperial system its already MPH by default 
   // before we check for the unit system, we first need to check if theres data available. Otherwise the app wont load.
 
   const API = `${process.env.REACT_APP_API_KEY}`

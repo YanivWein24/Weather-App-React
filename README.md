@@ -1,14 +1,26 @@
-## *Screenshots :*
+## Features:  
+* Get the current weather information for any location in the world!
+* Support for both the Metric and Imperial systems!
+* Recieve updated weather conditions, including:
+  * Weather Description 
+  * Temperature
+  * "Feels Like" Temperature
+  * Wind Speed
+  * Humidity Percentage  
+  * Plus a Dynamic Icon that changes depending on the weather description 
+
+
+## Screenshots :
 
 Using the metric unit system:  
 
-<img src="https://user-images.githubusercontent.com/97472180/171016448-1d365946-d4d1-4d12-80c0-cc8be13e6b38.png" alt="Login-Screen" width="600" height="380"/>  
+<img src="https://user-images.githubusercontent.com/97472180/171386049-a4adcf6d-3398-446c-a8f0-74d472780f03.PNG" alt="Login-Screen" width="650" height="380"/>  
   
 Using the imperial unit system:  
 
-<img src="https://user-images.githubusercontent.com/97472180/171016438-364e6e49-d206-4f30-b39c-4039a95d806d.png" alt="All-Secrets" width="600" height="380"/>  
+<img src="https://user-images.githubusercontent.com/97472180/171386043-24c3bdf2-9fee-497f-8067-226d460a0ae2.PNG" alt="All-Secrets" width="650" height="380"/>  
   
 Running on mobile:  
 
-<img src="https://user-images.githubusercontent.com/97472180/171016452-cdb16520-491e-4b5f-a174-8fc23fe6c649.jpg" alt="New-Secret" width="300" height="600"/>
+<img src="https://user-images.githubusercontent.com/97472180/171386051-f9963b99-7341-4f1b-ac5a-cffebf16c8f9.jpg" alt="New-Secret" width="300" height="600"/>
   
